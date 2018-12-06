@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class SubActivity extends AppCompatActivity {
 
-    TextView name, phone, address;
+    TextView name, phone, city;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

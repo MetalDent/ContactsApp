@@ -24,13 +24,12 @@
         android:inputType="phone" />
 
     <TextView
-        android:id="@+id/address"
+        android:id="@+id/city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:ems="10"
-        android:inputType="textPostalAddress" />
+        android:text="City" />
 
 
 </RelativeLayout>
