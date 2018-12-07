@@ -1,10 +1,14 @@
-package com.example.metal_dent.testapp;
+package com.example.metal_dent.testapp.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.content.Intent;
 import android.widget.TextView;
+
+import com.example.metal_dent.testapp.R;
+
+import org.w3c.dom.Text;
 
 public class SubActivity extends AppCompatActivity {
 
@@ -15,8 +19,8 @@ public class SubActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub);
 
-        phone = (EditText) findViewById(R.id.phone);
+        //phone = (TextView) findViewById(R.id.phone);
 
-        Intent intent = getIntent();
+        //Intent intent = getIntent();
     }
 }
