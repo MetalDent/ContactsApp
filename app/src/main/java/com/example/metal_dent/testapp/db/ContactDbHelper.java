@@ -51,6 +51,7 @@ public class ContactDbHelper extends SQLiteOpenHelper {
         if(!dbFile.exists()) {
             this.getReadableDatabase();
             this.close();
+
             copyDatabase();
             Log.d("db", "Database Copied.");
         }
@@ -95,5 +96,24 @@ public class ContactDbHelper extends SQLiteOpenHelper {
         //db.execSQL(SQL_DELETE_ENTRIES);
         //Log.d("db", "Table Upgraded...");
         //onCreate(db);
+
+//        File dbFile = new File(DB_PATH + ContactContract.DB_NAME);
+//        if(dbFile.exists()) {
+//            mDatabase.close();
+//            mContext.deleteDatabase(DB_PATH + ContactContract.DB_NAME);
+//            dbFile.delete();
+//        }
+
+        mContext.deleteDatabase(ContactContract.DB_NAME);
+        mDatabase.close();
+        new ContactDbHelper(mContext);
+
+
+        Log.d("db", "Database Upgraded.");
+    }
+
+    @Override
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        onUpgrade(db, oldVersion, newVersion);
     }
 }

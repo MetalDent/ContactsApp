@@ -9,43 +9,45 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.metal_dent.testapp.R;
-import com.example.metal_dent.testapp.models.Contact;
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
+public abstract class RecyclerViewAdapter<T> extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private Context mContext;
-    private List<Contact> contactList;
+    private Context context;
+    private List<T> items;
 
-    public RecyclerViewAdapter(Context mContext, List<Contact> contactList) {
-        this.mContext = mContext;
-        this.contactList = contactList;
+    public abstract RecyclerView.ViewHolder setViewHolder(ViewGroup parent);
+
+    public abstract void onBindData(RecyclerView.ViewHolder holder, T val);
+
+    public RecyclerViewAdapter(Context context, List<T> items){
+        this.context = context;
+        this.items = items;
     }
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.model_contact, viewGroup, false);
-        return new MyViewHolder(view);
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+        RecyclerView.ViewHolder viewHolder = setViewHolder(viewGroup);
+        return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        myViewHolder.name.setText(contactList.get(i).getName());
+    public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
+        onBindData(viewHolder, items.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return contactList.size();
+        return items.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView name;
+    public void addItems(List<T> savedCardItems){
+        items = savedCardItems;
+        this.notifyDataSetChanged();
+    }
 
-        public MyViewHolder(View itemView) {
-            super(itemView);
-
-            name = itemView.findViewById(R.id.name);
-        }
+    public T getItem(int position){
+        return items.get(position);
     }
 }
