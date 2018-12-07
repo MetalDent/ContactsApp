@@ -1,3 +1,4 @@
+/*
 package com.example.metal_dent.testapp.activities;
 
 import android.support.v7.app.AppCompatActivity;
@@ -17,3 +18,4 @@ public class SplashActivity extends AppCompatActivity {
         finish();
     }
 }
+*/
