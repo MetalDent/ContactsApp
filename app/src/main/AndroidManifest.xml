@@ -17,9 +17,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.SubActivity" />
-        <!-- For search function -->
-        <activity android:name=".activities.FriendListActivity" />
-        <activity android:name=".activities.FriendListAdapter"></activity>
     </application>
 
 </manifest>
