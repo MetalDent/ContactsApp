@@ -16,6 +16,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.SubActivity"></activity>
+        <activity android:name=".activities.SubActivity" />
+        <!-- For search function -->
+        <activity
+            android:name="activities.FriendListActivity"
+            android:configChanges="orientation"
+            android:launchMode="singleTask"
+            android:parentActivityName=".activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@layout/searchable" />
+        </activity>
+        <activity android:name=".activities.FriendListActivity" />
+        <activity android:name=".activities.FriendListAdapter"></activity>
     </application>
+
 </manifest>
