@@ -1,4 +1,4 @@
-package com.score.senzors.ui;
+package com.example.metal_dent.testapp.activities;
 
 import android.content.Context;
 import android.graphics.Typeface;

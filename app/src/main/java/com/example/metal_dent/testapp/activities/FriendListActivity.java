@@ -1,4 +1,4 @@
-package com.score.senzors.ui;
+package com.example.metal_dent.testapp.activities;
 
 import android.app.Activity;
 import android.app.SearchManager;
