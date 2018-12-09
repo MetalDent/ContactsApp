@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,10 +36,9 @@ public class MainActivity extends AppCompatActivity {
     private List<City> cityList;
     private ContactDbHelper dbHelper;
     private ProgressBar bar;
+    private RecyclerViewAdapter<City> mAdapter;
 
-    /*** For search***/
-    EditText edt;
-    /*******/
+    private EditText searchText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,9 +50,20 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = new ContactDbHelper(this);
         bar = findViewById(R.id.progress_bar_main);
 
-        /*** for search ***/
-        edt = (EditText)findViewById(R.id.editSearchText);
-        /*******/
+        searchText = (EditText) findViewById(R.id.editSearchText);
+        searchText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                    filterList(editable.toString().trim());
+            }
+        });
+
         bar.setVisibility(View.VISIBLE);
         recyclerView.setVisibility(View.GONE);
 
@@ -75,6 +87,16 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         handler.postDelayed(r, 100);
+    }
+
+    private void filterList(String text) {
+        List<City> filteredCityList = new ArrayList<>();
+        for(City city: cityList) {
+            if(city.getName().toLowerCase().contains(text.toLowerCase())) {
+                filteredCityList.add(city);
+            }
+        }
+        mAdapter.addFilteredList(filteredCityList);
     }
 
     private void getCityList() {
@@ -120,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        RecyclerViewAdapter<City> adapter = new RecyclerViewAdapter<City>(this, cityList) {
+        mAdapter = new RecyclerViewAdapter<City>(this, cityList) {
             @Override
             public RecyclerView.ViewHolder setViewHolder(ViewGroup parent) {
                 final View view = LayoutInflater.from(MainActivity.this).inflate(R.layout.model_city, parent, false);
@@ -132,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
             public void onBindData(RecyclerView.ViewHolder holder1, City model) {
                 CityViewHolder holder = (CityViewHolder) holder1;
                 holder.name.setText(model.getName());
+
                 holder.parentLayout.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -143,12 +166,11 @@ public class MainActivity extends AppCompatActivity {
                         MainActivity.this.startActivity(intent);
                     }
                 });
-
             }
         };
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(mAdapter);
     }
 }
