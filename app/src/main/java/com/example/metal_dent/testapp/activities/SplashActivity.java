@@ -21,6 +21,8 @@ public class SplashActivity extends AppCompatActivity {
 
         image = (ImageView) findViewById(R.id.image);
 
+        getSupportActionBar().hide();
+
         new Handler() .postDelayed(new Runnable() {
             @Override
             public void run() {

@@ -19,7 +19,8 @@
             android:layout_height="wrap_content"
             android:text="Name"
             android:id="@+id/contact_name"
-            android:textSize="19dp"/>
+            android:textSize="19dp"
+            android:textStyle="bold"/>
 
         <TextView
             android:layout_width="match_parent"

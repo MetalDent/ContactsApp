@@ -50,6 +50,8 @@ public class SubActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sub);
 
+        getSupportActionBar().hide();
+
         cityName = getIntent().getStringExtra("cityName");
         recyclerView = findViewById(R.id.recycler_view_sub);
         contactList = new ArrayList<>();
