@@ -19,7 +19,8 @@
             android:layout_height="match_parent"
             android:text="Name"
             android:id="@+id/name"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:textColor="@color/colorPrimary"/>
 
     </LinearLayout>
 
