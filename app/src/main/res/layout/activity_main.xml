@@ -12,10 +12,12 @@
     <EditText
         android:id="@+id/editSearchText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:hint="Search City"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:background="#DCDCDC"
+        android:textColor="@android:color/black"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_main"

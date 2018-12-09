@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +21,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+
 
 import com.example.metal_dent.testapp.R;
 import com.example.metal_dent.testapp.adapters.RecyclerViewAdapter;
@@ -40,10 +45,15 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText searchText;
 
+    ActionBar actionBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00004e")));
 
         recyclerView = findViewById(R.id.recycler_view_main);
         cityList = new ArrayList<>();
