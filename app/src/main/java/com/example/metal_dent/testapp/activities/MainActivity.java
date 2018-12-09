@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -34,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
     private ContactDbHelper dbHelper;
     private ProgressBar bar;
 
+    /*** For search***/
+    EditText edt;
+    /*******/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
         dbHelper = new ContactDbHelper(this);
         bar = findViewById(R.id.progress_bar_main);
 
+        /*** for search ***/
+        edt = (EditText)findViewById(R.id.editSearchText);
+        /*******/
         bar.setVisibility(View.VISIBLE);
         recyclerView.setVisibility(View.GONE);
 

@@ -7,6 +7,14 @@
     tools:context="com.example.metal_dent.testapp.activities.MainActivity"
     android:orientation="vertical">
 
+    <EditText
+        android:id="@+id/editSearchText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter to search"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_main"
         android:layout_width="match_parent"
