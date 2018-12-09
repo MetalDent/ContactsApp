@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,10 +41,9 @@ public class SubActivity extends AppCompatActivity {
     private List<Contact> contactList;
     private ContactDbHelper dbHelper;
     private ProgressBar bar;
+    private RecyclerViewAdapter<Contact> mAdapter;
 
-    /*** For search***/
-    EditText edt;
-    /*******/
+    private EditText searchText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +56,19 @@ public class SubActivity extends AppCompatActivity {
         dbHelper = new ContactDbHelper(this);
         bar = findViewById(R.id.progress_bar_sub);
 
-        /*** for search ***/
-        edt = (EditText)findViewById(R.id.editSearchText);
-        /*******/
+        searchText = (EditText)findViewById(R.id.editSearchText);
+        searchText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                filterList(editable.toString().trim());
+            }
+        });
 
         bar.setVisibility(View.VISIBLE);
         recyclerView.setVisibility(View.GONE);
@@ -82,6 +93,16 @@ public class SubActivity extends AppCompatActivity {
             }
         };
         handler.postDelayed(r, 100);
+    }
+
+    private void filterList(String text) {
+        List<Contact> filteredContactList = new ArrayList<>();
+        for(Contact contact: contactList) {
+            if(contact.getName().toLowerCase().contains(text.toLowerCase())) {
+                filteredContactList.add(contact);
+            }
+        }
+        mAdapter.addFilteredList(filteredContactList);
     }
 
     private void getContactList() {
@@ -127,7 +148,7 @@ public class SubActivity extends AppCompatActivity {
             }
         }
 
-        RecyclerViewAdapter<Contact> adapter = new RecyclerViewAdapter<Contact>(this, contactList) {
+        mAdapter = new RecyclerViewAdapter<Contact>(this, contactList) {
             @Override
             public RecyclerView.ViewHolder setViewHolder(ViewGroup parent) {
                 final View view = LayoutInflater.from(SubActivity.this).inflate(R.layout.model_contact, parent, false);
@@ -145,6 +166,6 @@ public class SubActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(mAdapter);
     }
 }

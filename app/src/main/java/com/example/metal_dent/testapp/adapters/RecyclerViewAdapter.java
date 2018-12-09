@@ -50,4 +50,9 @@ public abstract class RecyclerViewAdapter<T> extends RecyclerView.Adapter<Recycl
     public T getItem(int position){
         return items.get(position);
     }
+
+    public void addFilteredList(List<T> filteredList) {
+        items = filteredList;
+        notifyDataSetChanged();
+    }
 }

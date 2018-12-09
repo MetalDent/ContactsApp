@@ -7,11 +7,13 @@
     tools:context="com.example.metal_dent.testapp.activities.MainActivity"
     android:orientation="vertical">
 
+    <!-- android:background="@drawable/bg" -->
+
     <EditText
         android:id="@+id/editSearchText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter to search"
+        android:hint="Search City"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"/>
 
