@@ -40,6 +40,10 @@ public class SubActivity extends AppCompatActivity {
     private ContactDbHelper dbHelper;
     private ProgressBar bar;
 
+    /*** For search***/
+    EditText edt;
+    /*******/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +54,10 @@ public class SubActivity extends AppCompatActivity {
         contactList = new ArrayList<>();
         dbHelper = new ContactDbHelper(this);
         bar = findViewById(R.id.progress_bar_sub);
+
+        /*** for search ***/
+        edt = (EditText)findViewById(R.id.editSearchText);
+        /*******/
 
         bar.setVisibility(View.VISIBLE);
         recyclerView.setVisibility(View.GONE);
