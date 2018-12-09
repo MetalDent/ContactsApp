@@ -44,6 +44,7 @@ public class SubActivity extends AppCompatActivity {
     private RecyclerViewAdapter<Contact> mAdapter;
 
     private EditText searchText;
+    private TextView noMatchText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,7 @@ public class SubActivity extends AppCompatActivity {
         contactList = new ArrayList<>();
         dbHelper = new ContactDbHelper(this);
         bar = findViewById(R.id.progress_bar_sub);
+        noMatchText = findViewById(R.id.no_match_sub);
 
         searchText = (EditText)findViewById(R.id.editSearchText);
         searchText.addTextChangedListener(new TextWatcher() {
@@ -74,6 +76,7 @@ public class SubActivity extends AppCompatActivity {
 
         bar.setVisibility(View.VISIBLE);
         recyclerView.setVisibility(View.GONE);
+        noMatchText.setVisibility(View.GONE);
 
         final Handler handler = new Handler();
         final Runnable r = new Runnable() {
@@ -105,6 +108,14 @@ public class SubActivity extends AppCompatActivity {
             }
         }
         mAdapter.addFilteredList(filteredContactList);
+
+        if(filteredContactList.isEmpty()) {
+            noMatchText.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
+        } else {
+            noMatchText.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
+        }
     }
 
     private void getContactList() {

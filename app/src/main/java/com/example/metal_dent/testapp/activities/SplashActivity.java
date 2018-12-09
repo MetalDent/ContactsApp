@@ -11,7 +11,7 @@ import com.example.metal_dent.testapp.R;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private static int SPLASH_TIME_OUT = 4000;
+    private static int SPLASH_TIME_OUT = 1600;
     ImageView image;
 
     @Override

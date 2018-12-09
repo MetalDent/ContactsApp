@@ -44,8 +44,9 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerViewAdapter<City> mAdapter;
 
     private EditText searchText;
+    private TextView noMatchText;
 
-    ActionBar actionBar;
+    private ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,12 +54,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#00004e")));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#3F51B5")));
 
         recyclerView = findViewById(R.id.recycler_view_main);
         cityList = new ArrayList<>();
         dbHelper = new ContactDbHelper(this);
         bar = findViewById(R.id.progress_bar_main);
+        noMatchText = findViewById(R.id.no_match_main);
 
         searchText = (EditText) findViewById(R.id.editSearchText);
         searchText.addTextChangedListener(new TextWatcher() {
@@ -76,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
         bar.setVisibility(View.VISIBLE);
         recyclerView.setVisibility(View.GONE);
+        noMatchText.setVisibility(View.GONE);
 
         final Handler handler = new Handler();
         final Runnable r = new Runnable() {
@@ -107,6 +110,14 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         mAdapter.addFilteredList(filteredCityList);
+
+        if(filteredCityList.isEmpty()) {
+            noMatchText.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
+        } else {
+            noMatchText.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
+        }
     }
 
     private void getCityList() {

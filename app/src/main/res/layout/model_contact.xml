@@ -1,34 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="70dp"
     android:layout_marginTop="5dp"
     android:padding="8dp"
-    android:background="#fff">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/model_layout_contact">
+    android:background="#ffffff"
+    android:id="@+id/model_layout_contact">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Name"
             android:id="@+id/contact_name"
-            android:textSize="19dp"
-            android:textStyle="bold"/>
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Phone"
             android:id="@+id/contact_phone"
-            android:textSize="17dp"/>
+            android:textSize="18sp"
+            android:paddingTop="3dp"
+            android:textColor="@android:color/black"/>
 
-    </LinearLayout>
 
 </LinearLayout>
