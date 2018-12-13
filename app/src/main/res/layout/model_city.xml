@@ -16,7 +16,6 @@
             android:text="Name"
             android:id="@+id/name"
             android:textSize="20sp"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"/>
+            android:textColor="@android:color/black"/>
 
 </LinearLayout>
