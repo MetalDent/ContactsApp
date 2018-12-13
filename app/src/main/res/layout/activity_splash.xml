@@ -25,26 +25,28 @@
         android:layout_marginTop="99dp"
         android:src="@drawable/image" />
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#ffffff"
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true">
-        <TextView
-            android:id="@+id/my_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Created by: Priya Pandya"
-            android:textColor="#4B0082"
-            android:textStyle="bold"
-            android:layout_margin="27dp"/>
         <ImageView
             android:id="@+id/my_img"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/pp"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="250dp"/>
-    </RelativeLayout>
+            android:layout_marginLeft="20dp"
+            />
+        <TextView
+            android:id="@+id/my_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Created by: Priya Pandya"
+            android:textColor="#4B0082"
+            android:textStyle="bold"
+            android:layout_margin="25dp"/>
+    </LinearLayout>
 
 </RelativeLayout>
