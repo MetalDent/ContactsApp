@@ -44,7 +44,7 @@
             android:layout_height="50dp"
             android:src="@drawable/pp"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="200dp"/>
+            android:layout_marginLeft="250dp"/>
     </RelativeLayout>
 
 </RelativeLayout>
