@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="201dp"
-        android:text="Enter Password" />
+        android:text="Enter Phone Number: " />
 
     <EditText
         android:id="@+id/passcode"
@@ -23,7 +23,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="233dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="text" />
 
     <Button
         android:id="@+id/submit"
