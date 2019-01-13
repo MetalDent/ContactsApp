@@ -1,4 +1,4 @@
-package com.example.metal_dent.testapp.activities;
+package com.App.metal_dent.testapp.activities;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,20 +15,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.content.Intent;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.App.metal_dent.testapp.adapters.RecyclerViewAdapter;
+import com.App.metal_dent.testapp.db.ContactContract;
+import com.App.metal_dent.testapp.db.ContactDbHelper;
+import com.App.metal_dent.testapp.models.Contact;
 import com.example.metal_dent.testapp.R;
-import com.example.metal_dent.testapp.adapters.RecyclerViewAdapter;
-import com.example.metal_dent.testapp.db.ContactContract;
-import com.example.metal_dent.testapp.db.ContactContract.ContactEntry;
-import com.example.metal_dent.testapp.db.ContactDbHelper;
-import com.example.metal_dent.testapp.models.City;
-import com.example.metal_dent.testapp.models.Contact;
-
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -122,16 +116,16 @@ public class SubActivity extends AppCompatActivity {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         db.beginTransaction();
 
-        final String query = "SELECT * FROM " + ContactEntry.TABLE_NAME
-                + " WHERE " + ContactEntry.COL_CITY + "='" + cityName
-                + "' ORDER BY " + ContactEntry.COL_NAME;
+        final String query = "SELECT * FROM " + ContactContract.ContactEntry.TABLE_NAME
+                + " WHERE " + ContactContract.ContactEntry.COL_CITY + "='" + cityName
+                + "' ORDER BY " + ContactContract.ContactEntry.COL_NAME;
 
         Cursor cursor = db.rawQuery(query, null);
 
         while(cursor != null && cursor.moveToNext()) {
             Contact contact = new Contact();
-            contact.setName(cursor.getString(cursor.getColumnIndexOrThrow(ContactEntry.COL_NAME)));
-            contact.setPhone(cursor.getString(cursor.getColumnIndexOrThrow(ContactEntry.COL_PHONE)));
+            contact.setName(cursor.getString(cursor.getColumnIndexOrThrow(ContactContract.ContactEntry.COL_NAME)));
+            contact.setPhone(cursor.getString(cursor.getColumnIndexOrThrow(ContactContract.ContactEntry.COL_PHONE)));
             contactList.add(contact);
         }
 

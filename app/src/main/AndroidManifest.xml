@@ -4,22 +4,22 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo_launcher_round"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/logo_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".activities.SplashActivity">
+        <activity android:name="com.App.metal_dent.testapp.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".activities.MainActivity"/>
-        <activity android:name=".activities.SubActivity" />
+        <activity android:name="com.App.metal_dent.testapp.activities.MainActivity" />
+        <activity android:name="com.App.metal_dent.testapp.activities.SubActivity" />
+        <activity android:name="com.App.metal_dent.testapp.activities.PasskeyActivity" />
+        <activity android:name="com.App.metal_dent.testapp.activities.errorActivity"></activity>
     </application>
 
 </manifest>

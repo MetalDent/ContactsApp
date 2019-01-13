@@ -1,13 +1,10 @@
-package com.example.metal_dent.testapp.db;
+package com.App.metal_dent.testapp.db;
 
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
-import com.example.metal_dent.testapp.db.ContactContract.ContactEntry;
-import com.example.metal_dent.testapp.models.Contact;
 
 import java.io.File;
 import java.io.FileOutputStream;

@@ -3,18 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SplashActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="129dp"
-        android:text="Splash Page"
-        android:textColor="@color/colorPrimary"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+    tools:context="com.App.metal_dent.testapp.activities.SplashActivity">
 
     <ImageView
         android:id="@+id/splashImage"
@@ -23,14 +12,31 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="99dp"
-        android:src="@drawable/image" />
+        android:src="@drawable/image"/>
 
+<<<<<<< HEAD
     <LinearLayout
         android:layout_width="match_parent"
+=======
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="149dp"
+        android:text="શ્રી છારીયા ઉનેવાળ બ્રહ્મસમાજ"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25dp"
+        android:textStyle="bold"/>
+<!--
+    <RelativeLayout
+        android:layout_width="wrap_content"
+>>>>>>> 56b12b98c290173abbe10c173333786db5948761
         android:layout_height="wrap_content"
         android:background="#ffffff"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true">
+<<<<<<< HEAD
         <ImageView
             android:id="@+id/my_img"
             android:layout_width="50dp"
@@ -50,3 +56,17 @@
     </LinearLayout>
 
 </RelativeLayout>
+=======
+        <TextView
+            android:id="@+id/my_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Created by: Priya Hitesh Pandya"
+            android:textColor="#4B0082"
+            android:textStyle="bold"
+            android:layout_margin="27dp"
+            android:textSize="20dp"/>
+    </RelativeLayout>
+-->
+</RelativeLayout>
+>>>>>>> 56b12b98c290173abbe10c173333786db5948761

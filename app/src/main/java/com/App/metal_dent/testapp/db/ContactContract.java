@@ -1,4 +1,4 @@
-package com.example.metal_dent.testapp.db;
+package com.App.metal_dent.testapp.db;
 
 import android.provider.BaseColumns;
 

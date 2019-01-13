@@ -1,4 +1,4 @@
-package com.example.metal_dent.testapp.models;
+package com.App.metal_dent.testapp.models;
 
 public class Contact {
     private String name;
