@@ -1,4 +1,4 @@
-package com.example.metal_dent.testapp;
+package com.App.metal_dent.testapp;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

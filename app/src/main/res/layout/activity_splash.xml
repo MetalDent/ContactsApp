@@ -3,18 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SplashActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="129dp"
-        android:text="Splash Page"
-        android:textColor="@color/colorPrimary"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+    tools:context="com.App.metal_dent.testapp.activities.SplashActivity">
 
     <ImageView
         android:id="@+id/splashImage"
@@ -23,8 +12,19 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="99dp"
-        android:src="@drawable/image" />
+        android:src="@drawable/image"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="149dp"
+        android:text="શ્રી છારીયા ઉનેવાળ બ્રહ્મસમાજ"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25dp"
+        android:textStyle="bold"/>
+<!--
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,17 +34,11 @@
             android:id="@+id/my_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Created by: Priya Pandya"
+            android:text="Created by: Priya Hitesh Pandya"
             android:textColor="#4B0082"
             android:textStyle="bold"
-            android:layout_margin="27dp"/>
-        <ImageView
-            android:id="@+id/my_img"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/pp"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="250dp"/>
+            android:layout_margin="27dp"
+            android:textSize="20dp"/>
     </RelativeLayout>
-
+-->
 </RelativeLayout>

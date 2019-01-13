@@ -1,4 +1,4 @@
-package com.example.metal_dent.testapp.activities;
+package com.App.metal_dent.testapp.activities;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -22,14 +22,13 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 
 
+import com.App.metal_dent.testapp.adapters.RecyclerViewAdapter;
+import com.App.metal_dent.testapp.db.ContactContract;
+import com.App.metal_dent.testapp.db.ContactDbHelper;
+import com.App.metal_dent.testapp.models.City;
 import com.example.metal_dent.testapp.R;
-import com.example.metal_dent.testapp.adapters.RecyclerViewAdapter;
-import com.example.metal_dent.testapp.db.ContactDbHelper;
-import com.example.metal_dent.testapp.models.City;
-import com.example.metal_dent.testapp.db.ContactContract.ContactEntry;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -124,9 +123,9 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         db.beginTransaction();
 
-        final String query = "SELECT DISTINCT " + ContactEntry.COL_CITY
-                + " FROM " + ContactEntry.TABLE_NAME
-                + " ORDER BY " + ContactEntry.COL_CITY;
+        final String query = "SELECT DISTINCT " + ContactContract.ContactEntry.COL_CITY
+                + " FROM " + ContactContract.ContactEntry.TABLE_NAME
+                + " ORDER BY " + ContactContract.ContactEntry.COL_CITY;
 
         Cursor cursor = db.rawQuery(query, null);
 
