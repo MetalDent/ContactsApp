@@ -23,7 +23,7 @@ public class SplashActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-        new Handler() .postDelayed(new Runnable() {
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent homeIntent = new Intent(SplashActivity.this, PasskeyActivity.class);
