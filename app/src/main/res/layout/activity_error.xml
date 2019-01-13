@@ -12,17 +12,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="20dp"
-        android:textSize="50dp"
+        android:layout_marginTop="185dp"
+        android:padding="20dp"
+        android:text="Wrong Password!!!"
         android:textColor="#8B0000"
-        android:text="Wrong Password!!!" />
+        android:textSize="50dp" />
 
     <Button
         android:id="@+id/try_again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text1"
+        android:layout_centerHorizontal="true"
         android:text="Try Again" />
 </RelativeLayout>
