@@ -1,5 +1,5 @@
 /*** Splash Screen ***/
-package com.App.metal_dent.testapp.activities;
+package com.cubContacts.metal_dent.testapp.activities;
 
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -19,11 +19,11 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        image = (ImageView) findViewById(R.id.image);
+        image = findViewById(R.id.image);
 
         getSupportActionBar().hide();
 
-        new Handler() .postDelayed(new Runnable() {
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent homeIntent = new Intent(SplashActivity.this, PasskeyActivity.class);

@@ -1,4 +1,4 @@
-package com.App.metal_dent.testapp.models;
+package com.cubContacts.metal_dent.testapp.models;
 
 public class City {
     private String name;

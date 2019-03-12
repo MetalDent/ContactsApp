@@ -1,4 +1,4 @@
-package com.App.metal_dent.testapp.adapters;
+package com.cubContacts.metal_dent.testapp.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

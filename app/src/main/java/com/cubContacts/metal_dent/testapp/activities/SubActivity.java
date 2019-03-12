@@ -1,8 +1,10 @@
-package com.App.metal_dent.testapp.activities;
+package com.cubContacts.metal_dent.testapp.activities;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.net.Uri;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,13 +17,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.App.metal_dent.testapp.adapters.RecyclerViewAdapter;
-import com.App.metal_dent.testapp.db.ContactContract;
-import com.App.metal_dent.testapp.db.ContactDbHelper;
-import com.App.metal_dent.testapp.models.Contact;
+import com.cubContacts.metal_dent.testapp.adapters.RecyclerViewAdapter;
+import com.cubContacts.metal_dent.testapp.db.ContactContract;
+import com.cubContacts.metal_dent.testapp.db.ContactDbHelper;
+import com.cubContacts.metal_dent.testapp.models.Contact;
 import com.example.metal_dent.testapp.R;
 
 import java.io.IOException;
@@ -147,11 +150,13 @@ public class SubActivity extends AppCompatActivity {
         class ContactViewHolder extends RecyclerView.ViewHolder {
             TextView name;
             TextView phone;
+            LinearLayout parentLayout;
 
             public ContactViewHolder(View itemView) {
                 super(itemView);
                 name = itemView.findViewById(R.id.contact_name);
                 phone = itemView.findViewById(R.id.contact_phone);
+                parentLayout = itemView.findViewById(R.id.model_layout_contact);
             }
         }
 
@@ -164,10 +169,17 @@ public class SubActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onBindData(RecyclerView.ViewHolder holder1, Contact model) {
+            public void onBindData(final RecyclerView.ViewHolder holder1, Contact model) {
                 ContactViewHolder holder = (ContactViewHolder) holder1;
                 holder.name.setText(model.getName());
                 holder.phone.setText(model.getPhone());
+
+                holder.parentLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", ((ContactViewHolder) holder1).phone.getText().toString(), null)));
+                    }
+                });
             }
         };
 

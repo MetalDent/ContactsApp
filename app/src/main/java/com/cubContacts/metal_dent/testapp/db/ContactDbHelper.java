@@ -1,4 +1,4 @@
-package com.App.metal_dent.testapp.db;
+package com.cubContacts.metal_dent.testapp.db;
 
 import android.content.Context;
 import android.database.SQLException;

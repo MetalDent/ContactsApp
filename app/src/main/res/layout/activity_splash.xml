@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.App.metal_dent.testapp.activities.SplashActivity">
+    tools:context="com.cubContacts.metal_dent.testapp.activities.SplashActivity">
 
     <ImageView
         android:id="@+id/splashImage"
@@ -24,21 +24,16 @@
         android:textColor="@color/colorPrimary"
         android:textSize="25dp"
         android:textStyle="bold"/>
-<!--
-    <RelativeLayout
+
+    <TextView
+        android:id="@+id/my_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
-        android:layout_alignParentBottom="true">
-        <TextView
-            android:id="@+id/my_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Created by: Priya Hitesh Pandya"
-            android:textColor="#4B0082"
-            android:textStyle="bold"
-            android:layout_margin="27dp"
-            android:textSize="20dp"/>
-    </RelativeLayout>
--->
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:text="Created by: Priya Hitesh Pandya"
+        android:textColor="#4B0082"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 </RelativeLayout>

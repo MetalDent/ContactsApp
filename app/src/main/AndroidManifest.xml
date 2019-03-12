@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.metal_dent.testapp">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/logo_launcher_round"
@@ -9,17 +11,16 @@
         android:roundIcon="@mipmap/logo_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.App.metal_dent.testapp.activities.SplashActivity">
+        <activity android:name="com.cubContacts.metal_dent.testapp.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.App.metal_dent.testapp.activities.MainActivity" />
-        <activity android:name="com.App.metal_dent.testapp.activities.SubActivity" />
-        <activity android:name="com.App.metal_dent.testapp.activities.PasskeyActivity" />
-        <activity android:name="com.App.metal_dent.testapp.activities.errorActivity"></activity>
+        <activity android:name="com.cubContacts.metal_dent.testapp.activities.MainActivity" />
+        <activity android:name="com.cubContacts.metal_dent.testapp.activities.SubActivity" />
+        <activity android:name="com.cubContacts.metal_dent.testapp.activities.PasskeyActivity" />
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.App.metal_dent.testapp.activities;
+package com.cubContacts.metal_dent.testapp.activities;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -24,10 +24,10 @@ import android.widget.TextView;
 import android.support.v7.app.ActionBar;
 
 
-import com.App.metal_dent.testapp.adapters.RecyclerViewAdapter;
-import com.App.metal_dent.testapp.db.ContactContract;
-import com.App.metal_dent.testapp.db.ContactDbHelper;
-import com.App.metal_dent.testapp.models.City;
+import com.cubContacts.metal_dent.testapp.adapters.RecyclerViewAdapter;
+import com.cubContacts.metal_dent.testapp.db.ContactContract;
+import com.cubContacts.metal_dent.testapp.db.ContactDbHelper;
+import com.cubContacts.metal_dent.testapp.models.City;
 import com.example.metal_dent.testapp.R;
 
 import java.io.IOException;
@@ -192,5 +192,15 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(mAdapter);
+    }
+
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        //finish();
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
     }
 }

@@ -1,10 +1,10 @@
-package com.App.metal_dent.testapp.db;
+package com.cubContacts.metal_dent.testapp.db;
 
 import android.provider.BaseColumns;
 
 public class ContactContract {
     static final String DB_NAME = "com.example.metal_dent.testapp.db";
-    static final int DB_VERSION = 1;
+    static final int DB_VERSION = 2;
 
     private ContactContract() {}
 

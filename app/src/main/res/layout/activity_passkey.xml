@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.App.metal_dent.testapp.activities.PasskeyActivity">
+    android:background="@drawable/gradient"
+    tools:context="com.cubContacts.metal_dent.testapp.activities.PasskeyActivity">
 
     <TextView
         android:id="@+id/enter"
@@ -13,7 +14,10 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="201dp"
-        android:text="Enter Password" />
+        android:text="Enter Phone Number: "
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/passcode"
@@ -21,14 +25,49 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="233dp"
+        android:layout_marginTop="253dp"
         android:ems="10"
+        android:hint="Phone"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/submit"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="323dp"
+        android:background="@drawable/btn_background"
+        android:textSize="14dp"
+        android:text="Login"
+        android:textColor="#fff" />
+
+    <TextView
+        android:id="@+id/errorView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Submit" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="217dp"
+        android:text=""
+        android:textColor="#8B0000" />
+
 </RelativeLayout>
+
+
+<!--
+    <Button
+        android:id="@+id/logIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="297dp"
+        android:background="@drawable/btn_background"
+        android:padding="8dp"
+        android:text="Login"
+        android:textColor="#fff" />
+-->
+
+
+
+
