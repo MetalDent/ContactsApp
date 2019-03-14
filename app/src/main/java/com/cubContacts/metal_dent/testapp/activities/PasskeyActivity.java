@@ -21,7 +21,7 @@ import java.io.IOException;
 public class PasskeyActivity extends AppCompatActivity {
 
     EditText passcode;
-    Button loginTx;
+    Button loginTx, btnMail;
     TextView error;
     private ContactDbHelper dbHelper;
 
@@ -33,9 +33,22 @@ public class PasskeyActivity extends AppCompatActivity {
         loginTx = findViewById(R.id.submit);
         passcode = findViewById(R.id.passcode);
         error = findViewById(R.id.errorView);
+        btnMail = findViewById(R.id.btnMail);
         dbHelper = new ContactDbHelper(this);
 
         getSupportActionBar().hide();
+
+        btnMail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"chhariyaunevalahmedabad@gmail.com"});
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Chhariya Uneval Brahmasamaj: Request to update the details");
+
+                emailIntent.setType("message/rfc822");
+                startActivity(Intent.createChooser(emailIntent, "Choose email client..."));
+            }
+        });
 
         loginTx.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

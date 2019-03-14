@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="201dp"
+        android:layout_marginTop="161dp"
         android:text="Enter Phone Number: "
         android:textColor="#fff"
         android:textSize="20dp"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="253dp"
+        android:layout_marginTop="203dp"
         android:ems="10"
         android:hint="Phone"
         android:inputType="textPassword" />
@@ -35,7 +35,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="323dp"
+        android:layout_marginTop="273dp"
         android:background="@drawable/btn_background"
         android:textSize="14dp"
         android:text="Login"
@@ -47,9 +47,43 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="297dp"
+        android:layout_marginTop="247dp"
         android:text=""
         android:textColor="#8B0000" />
+
+    <TextView
+        android:id="@+id/textMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="383dp"
+        android:text="Phone number not listed?"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="413dp"
+        android:text="Email your details now"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="443dp"
+        android:background="@drawable/btn_background"
+        android:textColor="#fff"
+        android:text="Email" />
+
 
 </RelativeLayout>
 
