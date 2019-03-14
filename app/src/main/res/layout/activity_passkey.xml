@@ -47,26 +47,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="217dp"
+        android:layout_marginTop="297dp"
         android:text=""
         android:textColor="#8B0000" />
 
 </RelativeLayout>
 
-
-<!--
-    <Button
-        android:id="@+id/logIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="297dp"
-        android:background="@drawable/btn_background"
-        android:padding="8dp"
-        android:text="Login"
-        android:textColor="#fff" />
--->
 
 
 
