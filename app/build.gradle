@@ -6,8 +6,8 @@ android {
         applicationId "com.cubContacts.metal_dent.testapp"
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 2
-        versionName "1.1"
+        versionCode 4
+        versionName "1.3"
         vectorDrawables.useSupportLibrary = true;
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }

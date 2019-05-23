@@ -4,7 +4,7 @@ import android.provider.BaseColumns;
 
 public class ContactContract {
     static final String DB_NAME = "com.example.metal_dent.testapp.db";
-    static final int DB_VERSION = 2;
+    static final int DB_VERSION = 4;
 
     private ContactContract() {}
 
