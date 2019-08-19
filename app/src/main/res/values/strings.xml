@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Chhariya Uneval Brahmasamaj Directory</string>
+
+    <string name="update_message">The app update is available</string>
+
+    <string name="update_now">UPDATE NOW</string>
+
+    <string name="cancel">CANCEL</string>
+
+    <string name="app_upto_date">App is upto date</string>
 </resources>

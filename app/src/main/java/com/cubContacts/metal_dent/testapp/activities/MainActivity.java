@@ -1,10 +1,13 @@
 package com.cubContacts.metal_dent.testapp.activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
+import android.net.Uri;
 import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -45,10 +48,14 @@ public class MainActivity extends AppCompatActivity {
 
     private ActionBar actionBar;
 
+    boolean isForceUpdate = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        new GooglePlayStoreAppVersionNameLoader(getApplicationContext(), (WSCallerVersionListener) this).execute();
 
         recyclerView = findViewById(R.id.recycler_view_main);
         cityList = new ArrayList<>();
@@ -198,4 +205,43 @@ public class MainActivity extends AppCompatActivity {
         a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(a);
     }
+
+    /******************************************************************/
+/*
+    @Override
+    public void onGetResponse(boolean isUpdateAvailable) {
+        Log.e("ResultAPPMAIN", String.valueOf(isUpdateAvailable));
+        if (isUpdateAvailable) {
+            showUpdateDialog();
+        }
+    }
+*/
+    /**
+     * Method to show update dialog
+     */
+    public void showUpdateDialog() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
+
+        alertDialogBuilder.setTitle(MainActivity.this.getString(R.string.app_name));
+        alertDialogBuilder.setMessage(MainActivity.this.getString(R.string.update_message));
+        alertDialogBuilder.setCancelable(false);
+        alertDialogBuilder.setPositiveButton(R.string.update_now, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                MainActivity.this.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName())));
+                dialog.cancel();
+            }
+        });
+        alertDialogBuilder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (isForceUpdate) {
+                    finish();
+                }
+                dialog.dismiss();
+            }
+        });
+        alertDialogBuilder.show();
+    }
+
+    /******************************************************************/
 }
