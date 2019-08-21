@@ -207,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /******************************************************************/
-/*
+
     @Override
     public void onGetResponse(boolean isUpdateAvailable) {
         Log.e("ResultAPPMAIN", String.valueOf(isUpdateAvailable));
@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
             showUpdateDialog();
         }
     }
-*/
+
     /**
      * Method to show update dialog
      */
