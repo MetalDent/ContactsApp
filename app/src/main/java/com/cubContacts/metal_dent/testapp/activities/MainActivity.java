@@ -1,18 +1,23 @@
 package com.cubContacts.metal_dent.testapp.activities;
 
+import android.app.Application;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.net.Uri;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -30,12 +35,17 @@ import com.cubContacts.metal_dent.testapp.db.ContactContract;
 import com.cubContacts.metal_dent.testapp.db.ContactDbHelper;
 import com.cubContacts.metal_dent.testapp.models.City;
 import com.example.metal_dent.testapp.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+abstract public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private List<City> cityList;
@@ -205,43 +215,7 @@ public class MainActivity extends AppCompatActivity {
         a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(a);
     }
-
-    /******************************************************************/
-
-    @Override
-    public void onGetResponse(boolean isUpdateAvailable) {
-        Log.e("ResultAPPMAIN", String.valueOf(isUpdateAvailable));
-        if (isUpdateAvailable) {
-            showUpdateDialog();
-        }
-    }
-
-    /**
-     * Method to show update dialog
-     */
-    public void showUpdateDialog() {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
-
-        alertDialogBuilder.setTitle(MainActivity.this.getString(R.string.app_name));
-        alertDialogBuilder.setMessage(MainActivity.this.getString(R.string.update_message));
-        alertDialogBuilder.setCancelable(false);
-        alertDialogBuilder.setPositiveButton(R.string.update_now, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                MainActivity.this.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName())));
-                dialog.cancel();
-            }
-        });
-        alertDialogBuilder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                if (isForceUpdate) {
-                    finish();
-                }
-                dialog.dismiss();
-            }
-        });
-        alertDialogBuilder.show();
-    }
-
-    /******************************************************************/
 }
+
+
+

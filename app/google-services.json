@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "787269495459",
+    "firebase_url": "https://testapp-59791.firebaseio.com",
+    "project_id": "testapp-59791",
+    "storage_bucket": "testapp-59791.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787269495459:android:4a4bda7d3da31de1552d16",
+        "android_client_info": {
+          "package_name": "com.cubContacts.metal_dent.testapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "787269495459-ner0aktla0904rl94u300f231pvf7v9q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cubContacts.metal_dent.testapp",
+            "certificate_hash": "d61e8086a48363fde722f1d8da6c293e99a801dd"
+          }
+        },
+        {
+          "client_id": "787269495459-335pj2qle4bce6jim0cmm9v73k0dej31.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiCSOCAgUmGcrx66gmindWgFb_fPWSbrg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "787269495459-335pj2qle4bce6jim0cmm9v73k0dej31.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
