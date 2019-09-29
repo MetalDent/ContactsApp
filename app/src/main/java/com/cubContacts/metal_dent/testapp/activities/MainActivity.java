@@ -205,43 +205,4 @@ public class MainActivity extends AppCompatActivity {
         a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(a);
     }
-
-    /******************************************************************/
-
-    @Override
-    public void onGetResponse(boolean isUpdateAvailable) {
-        Log.e("ResultAPPMAIN", String.valueOf(isUpdateAvailable));
-        if (isUpdateAvailable) {
-            showUpdateDialog();
-        }
-    }
-
-    /**
-     * Method to show update dialog
-     */
-    public void showUpdateDialog() {
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(MainActivity.this);
-
-        alertDialogBuilder.setTitle(MainActivity.this.getString(R.string.app_name));
-        alertDialogBuilder.setMessage(MainActivity.this.getString(R.string.update_message));
-        alertDialogBuilder.setCancelable(false);
-        alertDialogBuilder.setPositiveButton(R.string.update_now, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                MainActivity.this.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName())));
-                dialog.cancel();
-            }
-        });
-        alertDialogBuilder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                if (isForceUpdate) {
-                    finish();
-                }
-                dialog.dismiss();
-            }
-        });
-        alertDialogBuilder.show();
-    }
-
-    /******************************************************************/
 }
